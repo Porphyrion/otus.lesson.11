@@ -6,6 +6,7 @@ include_directories(${Boost_INCLUDE_DIR})
 
 
 add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
+set_property(TARGET bulk PROPERTY POSITION_INDEPENDENT_CODE ON)
 add_library(libasync SHARED async.cpp async.h)
 set_property(TARGET libasync PROPERTY POSITION_INDEPENDENT_CODE ON)
 set_target_properties(bulk libasync  PROPERTIES

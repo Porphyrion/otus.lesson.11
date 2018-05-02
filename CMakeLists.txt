@@ -7,7 +7,7 @@ include_directories(${Boost_INCLUDE_DIR})
 
 add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 add_library(libasync SHARED async.cpp async.h)
-set_target_properties(bulkmt application interpreter observer commandblock  PROPERTIES
+set_target_properties(bulk libasync  PROPERTIES
 	CXX_STANDARD 14
 	CXX_STANDARD_REQUIRED ON
 	COMPILE_OPTION -Wpedantic -Wall -Wextra

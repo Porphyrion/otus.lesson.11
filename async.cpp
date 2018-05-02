@@ -22,7 +22,6 @@ void receive(handle_t handle, const char *data, std::size_t size){
 void disconnect(handle_t handle) {
     std::cout<<handlers.size()<<std::endl;
     auto x = std::find_if(handlers.begin(), handlers.end(), [&handle](decltype(*handlers.begin()) i){return i.get() == handle;} );
-    //x->lastBulk();
     handlers.erase(x);
     std::cout<<handlers.size()<<std::endl;
 }

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.9)
 project(Async VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost)
+find_package(Threads)
 include_directories(${Boost_INCLUDE_DIR})
 
 

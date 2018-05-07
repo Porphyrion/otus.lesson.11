@@ -7,6 +7,10 @@
 
 namespace async {
 
+std::mutex connectMutex;
+std::mutex disconnectMutex;
+std::mutex receiveMutex;
+
 using handle_t = void *;
 
 std::set<std::shared_ptr<bulk::Handle>> handlers{};

@@ -1,6 +1,5 @@
 #include "async.h"
 
-
 namespace async {
 
 handle_t connect(std::size_t bulk_){

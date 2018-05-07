@@ -15,8 +15,9 @@ set_target_properties(bulk async  PROPERTIES
 	COMPILE_OPTION -Wpedantic -Wall -Wextra
 	)
 
-target_link_libraries(async bulk
-${CMAKE_THREAD_LIBS_INIT}
+target_link_libraries(async
+	bulk
+	${CMAKE_THREAD_LIBS_INIT}
 )
 
 include(GNUInstallDirs)

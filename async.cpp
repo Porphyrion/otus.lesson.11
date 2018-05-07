@@ -10,7 +10,7 @@ handle_t connect(std::size_t bulk_){
 };
 
 void receive(handle_t handle, const char *data, std::size_t size){
-    std::lock_guard<std::mutex> lock(receivetMutex);
+    std::lock_guard<std::mutex> lock(receiveMutex);
     auto x = reinterpret_cast<bulk::Handle*>(handle);
     x->readString(data, size);
 };

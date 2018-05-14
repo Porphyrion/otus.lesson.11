@@ -78,7 +78,6 @@ namespace bulk
         Handle(int n) : interpreter(n){};
         void readString(const char * data, std::size_t size);
         void lastBulk();
-        void writeSome();
     private:
         Interpreter interpreter;
         std::string stash;

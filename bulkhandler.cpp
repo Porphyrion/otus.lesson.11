@@ -19,7 +19,3 @@ void bulk::Handle::lastBulk(){
     stash.clear();
     interpreter.lastBulk();
 };
-
-void bulk::Handle::writeSome(){
-    std::cout<<"puk";
-}

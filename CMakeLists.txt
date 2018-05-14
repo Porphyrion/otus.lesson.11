@@ -5,6 +5,8 @@ find_package(Boost)
 find_package(Threads)
 include_directories(${Boost_INCLUDE_DIR})
 
+configure_file(version.h.in version.h)
+
 
 # add_library(bulk commandblock.cpp observers.cpp interpreter.cpp bulkhandler.cpp)
 # set_property(TARGET bulk PROPERTY POSITION_INDEPENDENT_CODE ON)

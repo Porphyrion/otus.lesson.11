@@ -3,6 +3,7 @@
 #include <cstddef>
 #include <set>
 #include <memory>
+#include <mutex>
 #include "bulk.h"
 
 namespace async {

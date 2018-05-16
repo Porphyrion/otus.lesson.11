@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.9)
 project(Async VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost)
+find_package(Thread)
 include_directories(${Boost_INCLUDE_DIR})
 
 
@@ -11,6 +12,9 @@ set_target_properties(async  PROPERTIES
 	CXX_STANDARD_REQUIRED ON
 	COMPILE_OPTION -Wpedantic -Wall -Wextra
 	)
+target_link_libraries(async
+	 ${CMAKE_THREAD_LIBS_INIT}
+)
 
 
 include(GNUInstallDirs)

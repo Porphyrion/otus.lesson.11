@@ -13,7 +13,7 @@ void bulk::CoutObserver::update(Status s){
 void bulk::LogObserver::update(Status s){
     if(s == Status::start){
         bulkBeginTime = boost::lexical_cast<std::string>(time(nullptr));
-        bulkFileName = bulkBeginTime + std::to_string(bulkCounter);
+        bulkFileName = bulkBeginTime + std::to_string(this->bulkCounter);
         bulkFileName.append(".log");
     }
     else if(s == Status::stop){
@@ -23,7 +23,7 @@ void bulk::LogObserver::update(Status s){
             bulkFile<<i<<" ";
         }
         bulkFile<<std::endl;
-        ++bulkCounter;
+        ++this->bulkCounter;
         bulkFile.close();
     }
 };

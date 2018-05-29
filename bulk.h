@@ -52,7 +52,7 @@ namespace bulk
 
     class LogObserver : public Observer{
     public:
-        LogObserver(std::shared_ptr<CommandBlock> cb_) : Observer(cb_),id(id_)
+        LogObserver(std::shared_ptr<CommandBlock> cb_, int id) : Observer(cb_),id(id_)
                                         bulkCounter(0){};
         ~LogObserver() = default;
         void update(Status s) override;
@@ -67,7 +67,7 @@ namespace bulk
     //Интерпретатор комманд
     class Interpreter{
     public:
-        Interpreter(long N_);
+        Interpreter(long N_, int id_);
         void readCommand(std::string &command);
         void lastBulk();
 

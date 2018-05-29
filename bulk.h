@@ -52,7 +52,7 @@ namespace bulk
 
     class LogObserver : public Observer{
     public:
-        LogObserver(std::shared_ptr<CommandBlock> cb_, int id) : Observer(cb_),id(id_)
+        LogObserver(std::shared_ptr<CommandBlock> cb_, int id) : Observer(cb_),id(id_),
                                         bulkCounter(0){};
         ~LogObserver() = default;
         void update(Status s) override;

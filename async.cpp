@@ -1,11 +1,11 @@
 #include "async.h"
-#include <mutex>
 
 namespace async {
 
 handle_t connect(std::size_t bulk_){
     std::lock_guard<std::mutex> lock(connectMutex);
     auto h = std::make_shared<bulk::Handle>(bulk_);
+    ++bulk_;
     handlers.emplace(h);
     return static_cast<handle_t>(h.get());
 };

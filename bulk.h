@@ -52,13 +52,14 @@ namespace bulk
 
     class LogObserver : public Observer{
     public:
-        LogObserver(std::shared_ptr<CommandBlock> cb_) : Observer(cb_),
+        LogObserver(std::shared_ptr<CommandBlock> cb_) : Observer(cb_),id(id_)
                                         bulkCounter(0){};
         ~LogObserver() = default;
         void update(Status s) override;
 
     private:
         int bulkCounter;
+        int id;
         std::string bulkBeginTime;
         std::string bulkFileName;
     };
@@ -77,11 +78,13 @@ namespace bulk
 
     class Handle{
     public:
-        Handle(int n) : interpreter(n){};
+        Handle(int n, int id_) : interpreter(n, id_), id(id_){};
+        int getId(){ return id;};
         void readString(const char * data, std::size_t size);
         void lastBulk();
     private:
         Interpreter interpreter;
         std::string stash;
+        int id;
     };
 }

@@ -1,9 +1,9 @@
 #include "bulk.h"
 
-bulk::Interpreter::Interpreter(long N_):dynamic_counter(0){
+bulk::Interpreter::Interpreter(long N_, int id_):dynamic_counter(0){
     cb = std::make_shared<bulk::CommandBlock>(N_);
     cb->subscribe(std::make_unique<bulk::CoutObserver>(cb));
-    cb->subscribe(std::make_unique<bulk::LogObserver>(cb));
+    cb->subscribe(std::make_unique<bulk::LogObserver>(cb, id_));
 }
 
 void bulk::Interpreter::readCommand(std::string &command){
